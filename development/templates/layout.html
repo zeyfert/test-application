@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    {% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <title>{% block title %}{% endblock %}</title>
+    {% endblock %}
+  </head>
+  <body>
+
+
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <h5 class="my-0 mr-md-auto font-weight-normal">Just template</h5>
+        <nav class="my-2 my-md-0 mr-md-3">
+          <a class="p-2 text-dark" href="http://134.0.119.196">Main</a>
+          <a class="p-2 text-dark" href="http://134.0.119.196/development">Development</a>
+          <a class="p-2 text-dark" href="http://134.0.119.196/production">Production</a>
+          <a class="p-2 text-dark" href="https://github.com/zeyfert/test-application">Github</a>
+          <a class="p-2 text-dark" href="http://134.0.119.196:8080">Jenkins</a>
+        </nav>
+        </nav>
+    </div>
+
+
+    <div class="container">
+    {% block content %}{% endblock %}
+    </div>
+  </body>
+</html>

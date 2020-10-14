@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block title %}Main Page{% endblock %}
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .important { color: #336699; }
+  </style>
+{% endblock %}
+{% block content %}
+
+  <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <p class="lead">Please choose the section you are interested in</p>
+  </div>
+
+  <div class="card-deck mb-2 text-center">
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Development</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>Auto reload of the Flask</li>
+          <li>when app's files are changed</li>
+        </ul>
+        <a href="http://134.0.119.196/development" class="btn btn-lg btn-block btn-outline-primary" role="button" aria-pressed="true">Go</a>
+        
+      </div>
+    </div>
+
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Production</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">$15 <small class="text-muted">/ mo</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>Rebuilding of the container is required</li>
+          <li>when app's files changed</li>
+        </ul>
+        <a href="http://134.0.119.196/production" class="btn btn-lg btn-block btn-outline-primary" role="button" aria-pressed="true">Go</a>
+      </div>
+    </div>
+       
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Jenkins</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">$15 <small class="text-muted">/ mo</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>Jenkins' web-interface</li>
+          <li>on the remote server</li>
+        </ul>
+        <a href="http://134.0.119.196:8080" class="btn btn-lg btn-block btn-outline-primary" role="button" aria-pressed="true">Go</a>
+      </div>
+    </div>
+
+  </div>
+
+{% endblock %}

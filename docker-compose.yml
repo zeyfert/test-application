@@ -1,0 +1,51 @@
+version: "3.3"
+
+services:
+    
+    app:
+        build: ./app
+        container_name: app
+        restart: unless-stopped
+        ports:
+            - "5000:5000"
+        networks:
+            - test-application  
+   
+    production:
+        build: ./production
+        container_name: production
+        restart: unless-stopped
+        ports:
+            - "5005:5005"
+        networks:
+            - test-application  
+
+    development:
+        build: ./development
+        container_name: development
+        restart: unless-stopped
+        ports:
+            - "5010:5010"
+        volumes:
+            - ./development:/flask 
+        networks:
+            - test-application  
+
+    nginx:
+        image: nginx:1.19.3
+        container_name: nginx
+        restart: unless-stopped
+        ports:
+            - "80:80"
+        volumes:
+            - ./nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
+        depends_on:
+            - app
+            - production
+            - development
+        networks:
+            - test-application  
+
+networks:
+    test-application:
+        driver: bridge

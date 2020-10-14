@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block title %}Main Page{% endblock %}
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .important { color: #336699; }
+  </style>
+{% endblock %}
+{% block content %}
+
+  <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <p class="lead">Please be informed that you are in the production area</p>
+  </div>
+
+    <div class="row mb-2">
+      <div class="col-md-12">
+        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-6 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <h3 class="mb-0">Production section</h3>
+            <div class="mb-1 text-muted">Based on:</div>
+            <p>1. The Flask application</p> 
+            <p>2. Inside a docker container</p>
+            <p>3. On the remote VPS</p>
+            <p>4. The App uses uWSGI web-server</p> 
+            <a href="https://github.com/zeyfert/test-application/tree/master/production" class="stretched-link">GitHub</a>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <svg class="bd-placeholder-img" width="406" height="348" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><img src="{{ url_for('static', filename='production.png') }}" alt="За стеклом"></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+{% endblock %}
